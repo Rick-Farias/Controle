@@ -3,28 +3,26 @@ let receitas = document.getElementById("receitas");
 let despesas = document.getElementById("despesas");
 let transacoes = [];
 
-function atualizar(item){
-
-}
-
 const adicionar = document.getElementById("adicionar");
 adicionar.addEventListener('click', ()=>{    
-    let nome = document.getElementById("nome").value;
-    let valor = document.getElementById("valor").value;
+    
 
 
-    let transacao = novaTransacao(nome, valor)
+    let transacao = novaTransacao()
     AddTransacao(transacao)
-    atualizar(valor);
     InsertTransacoes(transacoes);
+    valores(transacoes)
+    mouseover()
 })
+
 function AddTransacao(transacao){
     transacoes.push(transacao);
-    
 }
 
 
-function novaTransacao(nome, valor){
+function novaTransacao(){
+    let nome = document.getElementById("nome").value;
+    let valor = document.getElementById("valor").value;
     let transacao = {};
     transacao.Id = Math.floor(Math.random()*19 + 1);
     transacao.nome = nome;
@@ -44,7 +42,7 @@ function InsertTransacoes(transacoes){
         let newPN = document.createElement("p");
         let newPV = document.createElement("p");
         let textNome = document.createTextNode(`${transacoes[i].nome}`);
-        let textValor = document.createTextNode(`${transacoes[i].valor}`);
+        let textValor = document.createTextNode(`R$  ${transacoes[i].valor}`);
         newPN.appendChild(textNome)
         newPV.appendChild(textValor)
 
@@ -60,4 +58,51 @@ function InsertTransacoes(transacoes){
             }
         }
     }
-atualizar()
+
+    function valores(transacoes){
+        let valorTransacoes = transacoes.map(t => t.valor);
+        let valoresNegativos = valorTransacoes.filter(t => t < 0);
+        let valoresPositivos = valorTransacoes.filter(t => t > 0);
+        
+        let vp = 0;
+        for(i=0;i < valoresPositivos.length; i++){
+            
+            vp += parseFloat(valoresPositivos[i]);
+        }
+
+        let vn = 0;
+        for(i=0; i < valoresNegativos.length; i++){
+            
+            vn += parseFloat(valoresNegativos[i]);
+        }
+
+        let vt = vp + vn;
+
+        InsertValores(vt, vp, vn)
+    }
+
+    function InsertValores(vt, vp, vn){
+        let saldo = document.getElementById("saldo");
+        let receitas = document.getElementById("receitas");
+        let despesas = document.getElementById("despesas");
+
+        saldo.innerText = `R$ ${vt}`;
+        receitas.innerText = `R$  ${vp}`; 
+        despesas.innerText = `R$  ${vn}`;
+    }
+    function mouseexcluir(item){
+        item.addEventListener('mouseover', ()=>{
+            item.classList.add('excluir')
+        })
+
+        item.addEventListener('mouseout', ()=>{
+            item.classList.remove('excluir')
+        })
+        
+        
+    }
+    function mouseover(){
+        let cards = document.querySelectorAll('.card')
+        cards.forEach(mouseexcluir)
+    }
+    mouseover()

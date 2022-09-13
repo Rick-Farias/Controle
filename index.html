@@ -10,10 +10,14 @@
     <title>Controle de despesas</title>
 </head>
 <body>
-    <div class="container">
-
-    <h1 class="titulo">Controle de despesas</h1>
-    <h2 class="sub-titulo">Bem vindo Riquelme!</h2>
+    
+    <div class="teste">
+        <div class="container">
+            <h1 class="titulo">CONTROLE DE DESPESAS</h1>
+            <div class="sub-titulo">
+                <h2>Bem vindo </h2> <h2> Riquelme!</h2>
+            </div>
+    
 
     <div class="card-saldo">
         <h2>SALDO ATUAL</h2>
@@ -24,36 +28,44 @@
         
         <div class="card-receitas">
             <h2>Receitas</h2>
-            <p id="receitas">R$ 0.00</p>
+            <p id="receitas" >R$ 0.00</p>
         </div>
-        <hr>
+        <div class="linha"></div>
         <div class="card-despesas">
             <h2>Despesas</h2>
             <p id="despesas">R$ 0.00</p>
         </div>
+        </div>
+        
+        
     </div>
+    </div>
+    
 
+    <div class="container">
     <div class="card-transacoes">
         <h2>Transações</h2>
         
-        <div id="transacoes-positivas">
-        </div>
-        <div id="transacoes-negativas">
-        </div>
+        <ul id="list-transacoes">
+            
+        </ul>
     </div>
 
     <div class="card-adicionar">
         <h2>Adicionar Transação</h2>
 
         <label for="nome" >Nome</label>
-        <input id="nome" type="text">
+        <input id="nome" type="text" placeholder="Nome da transação">
 
-        <label for="valor" >valor</label>
-        <input id="valor" type="number">
+        <label for="valor" >Valor</label>
+        <input id="valor" type="number" placeholder="Valor da transação">
     </div>
 
     <button id="adicionar">Adicionar</button>
     </div>
-    <script src="./assets/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="./assets/script2.js"></script>
+
 </body>
 </html>

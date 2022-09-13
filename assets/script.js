@@ -1,62 +1,58 @@
-let saldo = document.getElementById("saldo");
-let receitas = document.getElementById("receitas");
-let despesas = document.getElementById("despesas");
+
+const saldo = document.getElementById("saldo");
+const receitas = document.getElementById("receitas");
+const despesas = document.getElementById("despesas");
+const listaTransacoes = document.getElementById("list-transacoes");
 let transacoes = [];
 
 const adicionar = document.getElementById("adicionar");
 adicionar.addEventListener('click', ()=>{    
     
 
-
     let transacao = novaTransacao()
     AddTransacao(transacao)
-    InsertTransacoes(transacoes);
+    InsertTransacoesValue(transacoes);
     valores(transacoes)
-    mouseover()
+    console.log(transacoes)
 })
 
 function AddTransacao(transacao){
     transacoes.push(transacao);
 }
 
-
 function novaTransacao(){
     let nome = document.getElementById("nome").value;
-    let valor = document.getElementById("valor").value;
+    let valor = document.getElementById("valor").value; 
     let transacao = {};
     transacao.Id = Math.floor(Math.random()*19 + 1);
     transacao.nome = nome;
     transacao.valor = valor;
 
-    return transacao;
+    return transacao
 }
     
+    
+
+function InsertTransacoesValue(transacoes){
+    listaTransacoes.innerHTML = '';
+    for(let i = 0; i < transacoes.length; i++){
+    InsertTransacoes(transacoes[i])
+}
+}
 
 function InsertTransacoes(transacoes){
-    let negativo = document.getElementById("transacoes-negativas");
-    let positivo = document.getElementById("transacoes-positivas");
-    negativo.innerText = '';
-    positivo.innerText = '';
-    for(let i = 0; i < transacoes.length; i++){
-        let newDiv = document.createElement("div");
-        let newPN = document.createElement("p");
-        let newPV = document.createElement("p");
-        let textNome = document.createTextNode(`${transacoes[i].nome}`);
-        let textValor = document.createTextNode(`R$  ${transacoes[i].valor}`);
-        newPN.appendChild(textNome)
-        newPV.appendChild(textValor)
+    
+    let newli = document.createElement("li");
+    let operador = transacoes.valor < 0 ? '-' : '+'
+    let valorCheio = Math.abs(transacoes.valor)
+    
+    let classCSS = transacoes.valor < 0 ? 'desp' : 'rec';
 
-        newDiv.classList.add('card')
-        if(transacoes[i].valor < 0){
-                negativo.appendChild(newDiv)
-                newDiv.appendChild(newPN)
-                newDiv.appendChild(newPV)
-            }else{
-                positivo.appendChild(newDiv)
-                newDiv.appendChild(newPN)
-                newDiv.appendChild(newPV)
-            }
-        }
+    newli.classList.add(classCSS)
+    newli.innerHTML = `
+        ${transacoes.nome}<span>R$ ${operador}${valorCheio}</span>
+    `
+    listaTransacoes.append(newli)
     }
 
     function valores(transacoes){
@@ -90,19 +86,5 @@ function InsertTransacoes(transacoes){
         receitas.innerText = `R$  ${vp}`; 
         despesas.innerText = `R$  ${vn}`;
     }
-    function mouseexcluir(item){
-        item.addEventListener('mouseover', ()=>{
-            item.classList.add('excluir')
-        })
 
-        item.addEventListener('mouseout', ()=>{
-            item.classList.remove('excluir')
-        })
-        
-        
-    }
-    function mouseover(){
-        let cards = document.querySelectorAll('.card')
-        cards.forEach(mouseexcluir)
-    }
-    mouseover()
+    

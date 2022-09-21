@@ -1,0 +1,184 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    color: #2a1a63;
+    width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+}
+.teste{
+    background-image: linear-gradient(to bottom right,#33F8FF, #9442FE);
+    height: 300px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+}
+h2{
+    font-size: 1.0rem;
+}
+.container{
+    max-width: 300px;
+    margin: auto;
+    position: relative;
+}
+
+.titulo{
+    font-size: 1.4rem;
+    text-align: center;
+    color: #2a1a63;
+    margin: 10px;
+}
+.sub-titulo{
+    font-weight: 200;
+    display: flex;
+    margin-top: -5px;
+    color: #fff;
+}
+.sub-titulo h2:last-child{
+    color: #2a1a63;
+    margin-left: 5px;
+}
+
+.card-saldo h2{
+    margin-top: 10px;
+    color: #2a1a63;
+}
+.card-saldo #saldo{
+    font-weight: 500;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.card-controle{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+    margin: 20px;
+    background: rgba( 255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 10px 15px -10px #1C1C1C;
+    border-radius: 10px;
+}
+.card-controle .linha{
+    width: 1px;
+    height: 50px;
+    background-color: #2a1a63;
+}
+
+.card-controle h2{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #fff;
+}
+.card-controle p{
+    font-weight: 300;
+}
+.card-controle #receitas{
+    color: #2a1a63;
+    width: 110px;
+    text-align: center;
+}
+.card-controle #despesas{
+    color: #FF0000;
+    width: 110px;
+    text-align: center;
+}
+.card-transacoes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.card-transacoes h2{
+    font-size: 1.2rem;
+    margin: 10px 5px;
+}
+.desp, .rec{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    height: 50px;
+    width: 270px;
+    padding: 0px 10px;
+    font-size: 1.0rem;
+    margin: 10px 5px;
+    box-shadow: 2px 2px 15px -10px #1C1C1C;
+    padding-right: 30px;
+    position: relative;
+}
+.rec{
+    border-right: solid 2px #2a1a63;
+}
+.desp{
+    border-right: solid 2px #FF0000;
+}
+
+.card-adicionar h2{
+    font-size: 1.2rem;
+    margin: 10px 5px;
+}
+
+.card-adicionar label{
+    font-size: 1.0rem;
+    font-weight: 500;
+    margin-left: 5px;
+}
+.card-adicionar input{
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #2a1a63;
+    padding: 0px 10px;
+}
+.card-adicionar input:focus{
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid #2a1a63;
+}
+.btn-excluir{
+    background:none;
+    border: none;
+    width: 18px;
+    position: absolute;
+    right: 7px;
+    fill: #2a1a63;
+}
+#adicionar{
+    font-size: 1.2rem;
+    color: #FFFAFA;
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    background-image: linear-gradient(to bottom right,#33F8FF, #9442FE);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -10px #1C1C1C;
+    margin-bottom: 50px;
+}
+
+#sair{
+    position: absolute;
+    right: 0;
+    top: 48px;
+    
+}
+#sair h2{
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 1s;
+}
+#sair h2:hover{
+    color: #fff;
+}

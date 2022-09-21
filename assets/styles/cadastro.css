@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to bottom right,#33F8FF, #9442FE);
+    width: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-size: 1.2rem;
+    color: #fff;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 300px;
+}
+.card-cadastro{
+    background: rgba( 255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 10px 15px -10px #4a2081;
+    margin: auto;
+    height: 450px;
+    
+    border-radius: 10px;
+}
+
+.card-texto-cadastro .titulo{
+    text-align: center;
+    font-weight: 500;
+}
+.card-texto-cadastro p{
+    font-size: 1.0rem;
+    margin-left: 28px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px;
+    width: 300px;
+}
+.formulario input{
+    width: 100%;
+    height: 35px;
+    border: none;
+    background: none;
+    border-bottom: solid 2px #fff;
+    color: #fff;
+}
+.formulario input:focus{
+    border: none;
+    outline: 0;
+    border-bottom: solid 2px #fff;
+}
+.formulario input:focus::placeholder{
+    color: transparent;
+}
+
+.formulario input::placeholder{
+    color: #fff;
+    font-size: 1.0rem;
+    font-weight: 300;
+}
+#cadastro{
+    width: 80%;
+    margin-top: 30px;
+    height: 35px;
+    border: none;
+    border-radius: 60px;
+    color: #7F91FE;
+    font-size: 1.2rem;
+    background-color: #fff;
+    box-shadow: 10px 10px 15px -10px #4a2081;
+    cursor: pointer;
+    transition: 1s;
+}
+
+#cadastro:hover{
+    background-color: #7F91FE;
+    color: #fff;
+}
+.email, .senha{
+    margin-top: 10px;
+    width: 230px;
+    position: relative;
+}
+.email .senha,  i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    
+}
+.icon {
+    padding: 10px;
+    min-width: 2px;
+}
+  
+#email, #senha-1, #senha-2{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+.senha{
+    margin-top: 25px;
+}
+
+.outros{
+    margin: auto;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.outros .facebook, .google{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba( 255, 255, 255, 1);
+    backdrop-filter: blur(10px);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 1s;
+    box-shadow: 5px 10px 15px -10px #4a2081;
+}
+.outros .facebook:hover, .google:hover{
+    background: rgba( 255, 255, 255, 0.4);
+    transform: translateY(-10px);
+}
+
+.outros svg{
+    width: 30px;
+    height: 30px;
+    fill: #7F91FE;
+}
+
+.card-cadastro span{
+    font-size: 0.9rem;
+    margin: 10px;
+}
+
+.card-cadastro span a{
+    color: #2a1a63;
+}
